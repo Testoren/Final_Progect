@@ -1,0 +1,138 @@
+.tariff {
+    padding: 30px 0;
+}
+
+.title {
+    font-family: 'Ferry', sans-serif;
+    font-size: 30px;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.tariffsTable {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    overflow-x:auto;
+    padding: 10px 0;
+    & > .tariffPlate {margin: 5px;}
+    & > div:not(.tariffPlate) {padding: 15px 10px; display: flex; align-items: center; border-bottom: 1px solid #ccc;}
+    & > div:not(.tariffPlate):nth-child(4n+5),
+    & > div:not(.tariffPlate):nth-child(4n+6),
+    & > div:not(.tariffPlate):nth-child(4n+7) {justify-content: center;}
+}
+
+.tariffPlate {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    align-items: center;
+}
+
+.tariffPlate.tariff1, .orderBtn.tariff1 {
+    background-color: rgb(255, 182, 79);
+    grid-column-start: 2;
+}
+
+.tariffPlate.tariff2, .orderBtn.tariff2 {
+    background-color: rgb(124, 227, 225)
+}
+
+.tariffPlate.tariff3, .orderBtn.tariff3 {
+    background-color: #000;
+    color: white;
+    & * {color: white}
+}
+
+.orderBtn.tariff1:not(.currentTariff):hover {
+    background-color: rgb(231, 162, 64);
+}
+.orderBtn.tariff2:hover {
+    background-color: rgb(105, 204, 202)
+}
+.orderBtn.tariff3:hover {
+    background-color: #111;
+}
+
+.orderBtn {
+    border-radius: 5px;
+    margin: 10px 5px;
+    border: none;
+    padding: 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.orderBtn.currentTariff {
+    background: transparent;
+    cursor: default;
+    font-weight: bold;
+}
+
+.tariffInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.tariffName {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    padding-bottom: 10px;
+}
+
+.tariffDescription {
+    display: inline;
+    text-align: left;
+}
+
+.tariffImg {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.costs {
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: center;
+    gap: 5px;
+    & .big {
+        font-weight: 500;
+        font-size: 1.3em;
+    }
+    & .small {
+        font-size: .8em;
+        color: #888;
+    }
+}
+
+.cost {
+    flex-direction: column;
+    gap: 5px;
+    & .mainCost {
+        font-size: 1.5em;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        & .oldCost {
+            margin-left: 10px;
+            text-decoration-line: line-through;
+            color: #888;
+            font-size: .7em;
+        }
+    }
+    & .additionalCost {
+        font-size: .8em;
+        color: #666;
+        & strong {
+            font-weight: 700;
+            color: #444;
+        }
+    }
+}

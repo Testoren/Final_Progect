@@ -1,0 +1,29 @@
+.faqPage {
+    margin-bottom: 50px;
+}
+
+.title {
+    font-family: 'Ferry', sans-serif;
+    font-size: 40px;
+    color: #000;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.paragraph {
+    margin: 15px 0;
+}
+
+.list {
+    margin-left: 20px;
+    & li {
+        margin: 10px 0;
+        font-size: .95em;
+    }
+}
+
+.listTitle {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+}
